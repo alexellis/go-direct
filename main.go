@@ -20,6 +20,7 @@ func main() {
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		var body []byte
 		if r.Body != nil {
+			defer r.Body.Close()
 			var err error
 			body, err = io.ReadAll(r.Body)
 			if err != nil {
