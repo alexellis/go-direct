@@ -6,7 +6,7 @@ functions:
   go-direct:
     handler: ./
     lang: dockerfile
-    image: ttl.sh/openfaas/go-direct:0.0.2
+    image: ttl.sh/openfaas/go-direct:0.0.3
     labels:
       com.openfaas.scale.zero: true
       com.openfaas.scale.zero-duration: 5m
