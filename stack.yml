@@ -1,0 +1,10 @@
+provider:
+  name: openfaas
+
+functions:
+
+  go-direct:
+    handler: ./
+    lang: dockerfile
+    image: ttl.sh/openfaas/go-direct:0.0.1
+
