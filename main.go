@@ -11,9 +11,17 @@ func main() {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/_/health", func(w http.ResponseWriter, r *http.Request) {
+		if r.Body != nil {
+			defer r.Body.Close()
+		}
+
 		w.WriteHeader(http.StatusOK)
 	})
 	mux.HandleFunc("/_/ready", func(w http.ResponseWriter, r *http.Request) {
+		if r.Body != nil {
+			defer r.Body.Close()
+		}
+
 		w.WriteHeader(http.StatusOK)
 	})
 
